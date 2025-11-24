@@ -2,17 +2,33 @@
 
 A modern web application combining Astro's performance, Plasmic's visual builder, and Lit 3 web components.
 
-## 🚀 Quick Start with Plasmic Visual Builder
+## 📚 Documentation
 
-**Want to use the visual builder? Follow these steps:**
+**Start here:** [SETUP_COMPLETE.md](./SETUP_COMPLETE.md) - Everything you need to know! ⭐
+
+- **[QUICK_REFERENCE.md](./QUICK_REFERENCE.md)** - 30-second guide to common tasks
+- **[PLASMIC_GUIDE.md](./PLASMIC_GUIDE.md)** - Complete guide for managing pages & centralized menu
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - System architecture & how it works
+- **[PLASMIC_SETUP_GUIDE.md](./PLASMIC_SETUP_GUIDE.md)** - Initial setup instructions
+- **[PLASMIC_PRODUCTION_GUIDE.md](./PLASMIC_PRODUCTION_GUIDE.md)** - Production deployment guide
+- **[PLASMIC_TROUBLESHOOTING.md](./PLASMIC_TROUBLESHOOTING.md)** - Common issues & solutions
+
+## 🚀 Quick Start
 
 1. **Install dependencies**: `npm install`
-2. **Create .env file** with your Plasmic credentials (see `.env.example`)
+2. **Configure Plasmic** (optional): Copy `.env.example` to `.env` and add your Plasmic credentials
 3. **Start dev server**: `npm run dev`
 4. **Open Plasmic Studio** → Register components at `http://localhost:4321/plasmic-host`
-5. **Drag and drop** your Lit components in the visual builder!
+5. **Create pages visually** using the MainLayout component!
 
-📖 **Detailed guide**: See [PLASMIC_SETUP_GUIDE.md](./PLASMIC_SETUP_GUIDE.md) for complete step-by-step instructions.
+### 🎯 Key Feature: Centralized Menu
+
+Update your site menu in ONE place:
+- Open `src/lib/plasmic-registration.js`
+- Edit line 23: `menuItems: ['Home', 'About', 'Services', 'Contact']`
+- Restart server - menu updates on all pages! ✨
+
+See [QUICK_REFERENCE.md](./QUICK_REFERENCE.md) for a 30-second guide.
 
 ## Features
 
