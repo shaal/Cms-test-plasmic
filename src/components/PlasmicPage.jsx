@@ -4,12 +4,16 @@ import { FooterWrapper } from './plasmic/FooterWrapper.jsx';
 import { HeroWrapper } from './plasmic/HeroWrapper.jsx';
 import { VideoPlayerWrapper } from './plasmic/VideoPlayerWrapper.jsx';
 
-// Initialize Plasmic loader
+// Initialize Plasmic loader with optional version control
+// Use PUBLIC_PLASMIC_VERSION environment variable to pin to a specific version
+// Example: PUBLIC_PLASMIC_VERSION=1.0.0 to lock to version 1.0.0
+// If not set, omits version field to always fetch the newest published version
 const PLASMIC = initPlasmicLoader({
   projects: [
     {
       id: "wYYgvLaUtsMjC29YyzEHqw",
       token: "pxFtGLabN1cBPQyz5qmP1TbtGWYyhchcRdIV5n4i0p7wzEPY5mHRAPJCHNh7vcLv3RIfso9Tkt77lwArgvA",
+      ...(import.meta.env.PUBLIC_PLASMIC_VERSION && { version: import.meta.env.PUBLIC_PLASMIC_VERSION }),
     },
   ],
   preview: false,
