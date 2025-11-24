@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/@plasmicapp/host@latest/dist/host.umd.js"></script>
+  </head>
+  <body>
+    <div id="plasmic-host-container"></div>
+
+    <script>
+      // Import components and register when PlasmicHost is ready
+      import('../lib/plasmic-components').then(({ registerComponents }) => {
+        // @ts-ignore - PlasmicHost is loaded via UMD script
+        if (typeof window.PlasmicHost !== 'undefined') {
+          // @ts-ignore
+          registerComponents(window.PlasmicHost.registerComponent);
+        }
+      });
+    </script>
+  </body>
+</html>

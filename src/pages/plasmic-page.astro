@@ -1,0 +1,60 @@
+---
+// Example page that uses code components directly
+// For visual editing, use Plasmic Studio with the plasmic-host page
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { HeaderWrapper, FooterWrapper, HeroWrapper, VideoPlayerWrapper } from '../lib/plasmic-components';
+---
+
+<BaseLayout title="Plasmic-Ready Page">
+  <!-- Header component -->
+  <HeaderWrapper
+    client:load
+    logo="Plasmic Site"
+    menuItems={['Home', 'Features', 'Contact']}
+    backgroundColor="#2d3748"
+    textColor="#ffffff"
+  />
+
+  <main>
+    <!-- Hero component -->
+    <HeroWrapper
+      client:load
+      title="Edit Me in Plasmic!"
+      subtitle="These are code components that can be visually edited in Plasmic Studio"
+      ctaText="Open Plasmic"
+      ctaUrl="https://studio.plasmic.app"
+      backgroundColor="#667eea"
+      textColor="#ffffff"
+    />
+
+    <div style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; text-align: center;">
+      <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">
+        How to Use Plasmic Visual Builder
+      </h2>
+      <ol style="text-align: left; max-width: 600px; margin: 0 auto; line-height: 1.8;">
+        <li>Start the dev server: <code>npm run dev</code></li>
+        <li>Go to <a href="https://studio.plasmic.app" target="_blank">Plasmic Studio</a></li>
+        <li>Register this URL as a code component host: <code>http://localhost:4321/plasmic-host</code></li>
+        <li>Your 4 Lit components will appear in the component library!</li>
+        <li>Drag and drop them to build pages visually</li>
+      </ol>
+    </div>
+
+    <!-- Video Player component -->
+    <VideoPlayerWrapper
+      client:load
+      title="Demo Video"
+      videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      controls={true}
+      maxWidth="900px"
+    />
+  </main>
+
+  <!-- Footer component -->
+  <FooterWrapper
+    client:load
+    copyright="© 2024 Built with Astro, Plasmic & Lit"
+    backgroundColor="#1a202c"
+    textColor="#ffffff"
+  />
+</BaseLayout>

@@ -2,6 +2,18 @@
 
 A modern web application combining Astro's performance, Plasmic's visual builder, and Lit 3 web components.
 
+## 🚀 Quick Start with Plasmic Visual Builder
+
+**Want to use the visual builder? Follow these steps:**
+
+1. **Install dependencies**: `npm install`
+2. **Create .env file** with your Plasmic credentials (see `.env.example`)
+3. **Start dev server**: `npm run dev`
+4. **Open Plasmic Studio** → Register components at `http://localhost:4321/plasmic-host`
+5. **Drag and drop** your Lit components in the visual builder!
+
+📖 **Detailed guide**: See [PLASMIC_SETUP_GUIDE.md](./PLASMIC_SETUP_GUIDE.md) for complete step-by-step instructions.
+
 ## Features
 
 - **2 Landing Pages**: Home and About pages
