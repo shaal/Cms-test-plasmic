@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../components/Header';
+import '../components/Footer';
+import '../components/Hero';
+import '../components/VideoPlayer';
+---
+
+<BaseLayout title="Home - Astro + Plasmic + Lit">
+  <app-header
+    logo="MyBrand"
+    backgroundColor="#4a5568"
+    textColor="#ffffff"
+  ></app-header>
+
+  <main>
+    <app-hero
+      title="Welcome to Astro + Plasmic + Lit"
+      subtitle="Build powerful web applications with modern technologies"
+      ctaText="Learn More"
+      ctaUrl="#about"
+      backgroundColor="#667eea"
+      textColor="#ffffff"
+    ></app-hero>
+
+    <app-video-player
+      title="Watch Our Introduction"
+      videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+      posterUrl=""
+      controls
+      maxWidth="900px"
+    ></app-video-player>
+
+    <div style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
+      <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">
+        Key Features
+      </h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+        <div style="padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">🚀 Astro</h3>
+          <p>Lightning-fast static site generation with partial hydration for optimal performance.</p>
+        </div>
+        <div style="padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">🎨 Plasmic</h3>
+          <p>Visual builder that lets you design and manage components without leaving your workflow.</p>
+        </div>
+        <div style="padding: 2rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">⚡ Lit 3</h3>
+          <p>Fast, lightweight web components with simple and expressive reactive templates.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <app-footer
+    copyright="© 2024 MyBrand. All rights reserved."
+    backgroundColor="#2d3748"
+    textColor="#ffffff"
+  ></app-footer>
+</BaseLayout>
+
+<script>
+  // Import components to ensure they're registered
+  import '../components/Header';
+  import '../components/Footer';
+  import '../components/Hero';
+  import '../components/VideoPlayer';
+</script>

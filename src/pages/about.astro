@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../components/Header';
+import '../components/Footer';
+import '../components/Hero';
+import '../components/VideoPlayer';
+---
+
+<BaseLayout title="About - Astro + Plasmic + Lit">
+  <app-header
+    logo="MyBrand"
+    backgroundColor="#4a5568"
+    textColor="#ffffff"
+  ></app-header>
+
+  <main>
+    <app-hero
+      title="About Our Technology Stack"
+      subtitle="Discover how we combine cutting-edge tools to create exceptional experiences"
+      ctaText="Get Started"
+      ctaUrl="/"
+      backgroundColor="#48bb78"
+      textColor="#ffffff"
+    ></app-hero>
+
+    <div style="padding: 4rem 2rem; max-width: 1200px; margin: 0 auto;">
+      <section style="margin-bottom: 4rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Our Mission</h2>
+        <p style="font-size: 1.25rem; line-height: 1.8; color: #555;">
+          We're dedicated to demonstrating the power of modern web technologies by combining
+          Astro's performance-first architecture, Plasmic's visual development capabilities,
+          and Lit's efficient web components into a cohesive development experience.
+        </p>
+      </section>
+
+      <section style="margin-bottom: 4rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Why This Stack?</h2>
+        <div style="display: grid; gap: 2rem;">
+          <div style="padding: 2rem; background: #f7fafc; border-radius: 8px;">
+            <h3 style="font-size: 1.75rem; margin-bottom: 1rem; color: #2d3748;">
+              Performance First
+            </h3>
+            <p style="line-height: 1.8; color: #555;">
+              Astro ships zero JavaScript by default, only hydrating components when needed.
+              This results in lightning-fast page loads and excellent Core Web Vitals scores.
+            </p>
+          </div>
+          <div style="padding: 2rem; background: #f7fafc; border-radius: 8px;">
+            <h3 style="font-size: 1.75rem; margin-bottom: 1rem; color: #2d3748;">
+              Visual Development
+            </h3>
+            <p style="line-height: 1.8; color: #555;">
+              Plasmic enables designers and developers to work together seamlessly.
+              Build and iterate on designs visually while maintaining full control over your code components.
+            </p>
+          </div>
+          <div style="padding: 2rem; background: #f7fafc; border-radius: 8px;">
+            <h3 style="font-size: 1.75rem; margin-bottom: 1rem; color: #2d3748;">
+              Standards-Based Components
+            </h3>
+            <p style="line-height: 1.8; color: #555;">
+              Lit 3 provides a simple, standards-based way to create fast, lightweight web components.
+              They work everywhere and integrate seamlessly with any framework or no framework at all.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <app-video-player
+      title="See It In Action"
+      videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+      controls
+      maxWidth="1000px"
+    ></app-video-player>
+  </main>
+
+  <app-footer
+    copyright="© 2024 MyBrand. All rights reserved."
+    backgroundColor="#2d3748"
+    textColor="#ffffff"
+  ></app-footer>
+</BaseLayout>
+
+<script>
+  // Import components to ensure they're registered
+  import '../components/Header';
+  import '../components/Footer';
+  import '../components/Hero';
+  import '../components/VideoPlayer';
+</script>
