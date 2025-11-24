@@ -9,24 +9,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plasmic Host</title>
-    <script src="https://unpkg.com/@plasmicapp/host@latest/dist/host.umd.js"></script>
   </head>
   <body>
     <div id="plasmic-host-container"></div>
-
-    <script>
-      // Import components and register when PlasmicHost is ready
-      import('../lib/plasmic-components').then(({ registerComponents }) => {
-        // Wait for PlasmicHost to be available
-        if (typeof window.PlasmicHost !== 'undefined') {
-          registerComponents(window.PlasmicHost.registerComponent);
-          console.log('✅ Plasmic components registered successfully!');
-        } else {
-          console.error('❌ PlasmicHost not loaded');
-        }
-      }).catch(error => {
-        console.error('❌ Error loading components:', error);
-      });
-    </script>
+    <script type="module" src="/src/plasmic-host-init.ts"></script>
   </body>
 </html>

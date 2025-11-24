@@ -1,3 +1,4 @@
+/** @jsxImportSource react */
 import React from 'react';
 import '@lit-labs/react';
 import { Header as LitHeader } from '../Header';
@@ -10,15 +11,7 @@ export const Header = createComponent({
   react: React,
 });
 
-export interface HeaderProps {
-  logo?: string;
-  menuItems?: string[];
-  backgroundColor?: string;
-  textColor?: string;
-  className?: string;
-}
-
-export const HeaderWrapper: React.FC<HeaderProps> = ({
+export const HeaderWrapper = ({
   logo = 'Logo',
   menuItems = ['Home', 'About', 'Contact'],
   backgroundColor = '#ffffff',

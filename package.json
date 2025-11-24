@@ -15,6 +15,7 @@
     "@lit/react": "^1.0.0",
     "@plasmicapp/host": "^1.0.0",
     "@plasmicapp/loader-fetcher": "^1.0.0",
+    "@plasmicapp/loader-react": "^1.0.404",
     "@plasmicapp/react-web": "^0.2.0",
     "astro": "^4.15.0",
     "lit": "^3.2.0",

@@ -1,3 +1,4 @@
+/** @jsxImportSource react */
 import React from 'react';
 import '@lit-labs/react';
 import { VideoPlayer as LitVideoPlayer } from '../VideoPlayer';
@@ -10,19 +11,7 @@ export const VideoPlayer = createComponent({
   react: React,
 });
 
-export interface VideoPlayerProps {
-  videoUrl?: string;
-  posterUrl?: string;
-  title?: string;
-  controls?: boolean;
-  autoplay?: boolean;
-  loop?: boolean;
-  width?: string;
-  maxWidth?: string;
-  className?: string;
-}
-
-export const VideoPlayerWrapper: React.FC<VideoPlayerProps> = ({
+export const VideoPlayerWrapper = ({
   videoUrl = '',
   posterUrl = '',
   title = '',

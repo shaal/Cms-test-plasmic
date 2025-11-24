@@ -1,3 +1,4 @@
+/** @jsxImportSource react */
 import React from 'react';
 import '@lit-labs/react';
 import { Footer as LitFooter } from '../Footer';
@@ -10,15 +11,7 @@ export const Footer = createComponent({
   react: React,
 });
 
-export interface FooterProps {
-  copyright?: string;
-  socialLinks?: Array<{name: string, url: string}>;
-  backgroundColor?: string;
-  textColor?: string;
-  className?: string;
-}
-
-export const FooterWrapper: React.FC<FooterProps> = ({
+export const FooterWrapper = ({
   copyright = '© 2024 Your Company',
   socialLinks = [],
   backgroundColor = '#333333',

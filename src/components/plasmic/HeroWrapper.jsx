@@ -1,3 +1,4 @@
+/** @jsxImportSource react */
 import React from 'react';
 import '@lit-labs/react';
 import { Hero as LitHero } from '../Hero';
@@ -10,18 +11,7 @@ export const Hero = createComponent({
   react: React,
 });
 
-export interface HeroProps {
-  title?: string;
-  subtitle?: string;
-  ctaText?: string;
-  ctaUrl?: string;
-  backgroundImage?: string;
-  backgroundColor?: string;
-  textColor?: string;
-  className?: string;
-}
-
-export const HeroWrapper: React.FC<HeroProps> = ({
+export const HeroWrapper = ({
   title = 'Welcome to Our Site',
   subtitle = 'Build amazing experiences with Astro and Plasmic',
   ctaText = 'Get Started',

@@ -1,15 +1,13 @@
-// Plasmic component exports
-import { HeaderWrapper } from '../components/plasmic/HeaderWrapper.jsx';
-import { FooterWrapper } from '../components/plasmic/FooterWrapper.jsx';
-import { HeroWrapper } from '../components/plasmic/HeroWrapper.jsx';
-import { VideoPlayerWrapper } from '../components/plasmic/VideoPlayerWrapper.jsx';
+// This file registers components with Plasmic Host
+// Using .js extension to avoid React plugin issues
 
-// Export wrappers for use in pages
-export { HeaderWrapper, FooterWrapper, HeroWrapper, VideoPlayerWrapper };
+export async function registerComponents(registerComponent) {
+  // Dynamically import the wrapper components
+  const { HeaderWrapper } = await import('../components/plasmic/HeaderWrapper.jsx');
+  const { FooterWrapper } = await import('../components/plasmic/FooterWrapper.jsx');
+  const { HeroWrapper } = await import('../components/plasmic/HeroWrapper.jsx');
+  const { VideoPlayerWrapper } = await import('../components/plasmic/VideoPlayerWrapper.jsx');
 
-// This function registers components with Plasmic Host
-// It will be called from the plasmic-host page
-export function registerComponents(registerComponent: any) {
   // Register Header component
   registerComponent(HeaderWrapper, {
     name: 'Header',
