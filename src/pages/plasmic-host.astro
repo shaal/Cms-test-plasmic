@@ -1,7 +1,14 @@
+---
+// Plasmic Host Page - This page registers your Lit components with Plasmic Studio
+// Visit this page in Plasmic Studio to load your code components
+---
+
 <!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plasmic Host</title>
     <script src="https://unpkg.com/@plasmicapp/host@latest/dist/host.umd.js"></script>
   </head>
   <body>
@@ -10,11 +17,15 @@
     <script>
       // Import components and register when PlasmicHost is ready
       import('../lib/plasmic-components').then(({ registerComponents }) => {
-        // @ts-ignore - PlasmicHost is loaded via UMD script
+        // Wait for PlasmicHost to be available
         if (typeof window.PlasmicHost !== 'undefined') {
-          // @ts-ignore
           registerComponents(window.PlasmicHost.registerComponent);
+          console.log('✅ Plasmic components registered successfully!');
+        } else {
+          console.error('❌ PlasmicHost not loaded');
         }
+      }).catch(error => {
+        console.error('❌ Error loading components:', error);
       });
     </script>
   </body>
